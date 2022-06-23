@@ -26,3 +26,12 @@ class Contacto(models.Model):
     
     def __str__(self):
         return self.rut
+
+class Producto(models.Model):
+    id_producto = models.CharField(primary_key=True, max_length=25,verbose_name='ID_PRODUCTO')
+    nom_producto =models.CharField(max_length=50, verbose_name='Nombre Producto')
+    stock = models.IntegerField(verbose_name='Stock')
+    precio = models.IntegerField(verbose_name='Precio')
+    
+    def __str__(self):
+        return self.id_producto
