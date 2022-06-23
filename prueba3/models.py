@@ -18,7 +18,7 @@ class Usuario(models.Model):
 
 class Contacto(models.Model):
     rut = models.CharField(primary_key=True, max_length=25,verbose_name='RUT')
-    pnombre =models.CharField(max_length=50, verbose_name='Primer Nombre')
+    pnombre = models.CharField(max_length=50, verbose_name='Primer Nombre')
     apellido = models.CharField(max_length=50,verbose_name='Apellido')
     email = models.CharField(max_length=50,verbose_name='Email')
     telefono = models.CharField(max_length=50,verbose_name='Teléfono')
@@ -29,9 +29,17 @@ class Contacto(models.Model):
 
 class Producto(models.Model):
     id_producto = models.CharField(primary_key=True, max_length=25,verbose_name='ID_PRODUCTO')
-    nom_producto =models.CharField(max_length=50, verbose_name='Nombre Producto')
+    nom_producto = models.CharField(max_length=50, verbose_name='Nombre Producto')
     stock = models.IntegerField(verbose_name='Stock')
     precio = models.IntegerField(verbose_name='Precio')
     
     def __str__(self):
         return self.id_producto
+
+class Venta(models.Model):
+    id_venta = models.CharField(primary_key=True, max_length=25,verbose_name='ID_VENTA')
+    producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    total_venta = models.IntegerField(verbose_name='Monto total de venta')
+    descuento = models.CharField(max_length=25, verbose_name='Porcentaje de descuento')
+
