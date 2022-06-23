@@ -8,6 +8,8 @@ def index(request):
 def vision(request):
     return render(request, 'prueba3/vision.html')
 
+def compras(request):
+    return render(request, 'prueba3/compras.html')
 
 def mision(request):
     return render(request, 'prueba3/mision.html')
