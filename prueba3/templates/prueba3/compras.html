@@ -37,7 +37,7 @@
   
   <!--Comienzo body-->
   
-  <body class="noscrollbar" >
+  <body>
   
     <!--nav bar-->
   
@@ -99,25 +99,33 @@
 
     <!-- Aquí va el contenido -->
 
-    <div class="container">
-    <h1>Venta</h1>
-    <div class="row">
-        <form method="post" action="" id="Formulario Venta">
-            {% csrf_token %}
-            <div class="form-group">
 
-              {{form.as_table}}
-
+        <div class="container-fluid">
+          <div class="row align-items-center gy-5">
+            <div class="container-md pt-5 pb-5">
+              <div class="row">
+                <!-- Elementos generados a partir del JSON -->
+                <main id="items" class="col-sm-8 row"></main>
+                <!-- Carrito -->
+                <aside class="col-lg-5">
+                    <h2>Carrito</h2>
+                    <!-- Elementos del carrito -->
+                    <ul id="carrito" class="list-group"></ul>
+                    <hr>
+                    <!-- Precio total -->
+                    <p class="text-right">Total con descuento del 10% aplicado: $<span id="total"></span></p>
+                    <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+                </aside>
+              </div>
             </div>
+          </div>
+      </div>
+        
+        
+        <script src="{% static 'prueba3/js/js.js' %}"></script>
 
-            <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
-            <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
-            <div id="error" class="alert alert-danger" role="alert"></div>
 
-        </form>
-        <div class="alert alert-success" role="alert">
-          {{mensaje}}
-        </div>
+
 
     </div>
     </div>
