@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
-from .models import Usuario, Contacto
-from .forms import UsuarioForm, ContactoForm
+from .models import Usuario, Contacto, Producto, Venta
+from .forms import UsuarioForm, ContactoForm, VentaForm
 
 def index(request):
     return render(request, 'prueba3/index.html')
@@ -9,7 +9,9 @@ def vision(request):
     return render(request, 'prueba3/vision.html')
 
 def compras(request):
-    return render(request, 'prueba3/compras.html')
+    datos = {'form': VentaForm()}
+
+    return render(request, 'prueba3/compras.html',datos)
 
 def mision(request):
     return render(request, 'prueba3/mision.html')

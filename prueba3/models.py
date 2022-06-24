@@ -34,12 +34,16 @@ class Producto(models.Model):
     precio = models.IntegerField(verbose_name='Precio')
     
     def __str__(self):
-        return self.id_producto
+        return self.nom_producto
 
 class Venta(models.Model):
     id_venta = models.CharField(primary_key=True, max_length=25,verbose_name='ID_VENTA')
     producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    cantidad = models.IntegerField(null=True,verbose_name='Cantidad de producto')
     total_venta = models.IntegerField(verbose_name='Monto total de venta')
     descuento = models.CharField(max_length=25, verbose_name='Porcentaje de descuento')
+
+    def __str__(self):
+        return self.id_venta
 

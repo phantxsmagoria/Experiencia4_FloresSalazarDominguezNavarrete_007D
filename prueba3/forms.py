@@ -1,6 +1,6 @@
 from django import forms 
 from django.forms import ModelForm
-from .models import Usuario,Contacto
+from .models import Usuario, Contacto, Producto, Venta
 
 
 class UsuarioForm(ModelForm):
@@ -14,3 +14,9 @@ class ContactoForm(ModelForm):
     class Meta:
         model = Contacto
         fields = ['rut','pnombre','apellido','email','telefono','dudas']
+
+class VentaForm(ModelForm):
+
+    class Meta:
+        model = Venta
+        fields = ['usuario','producto','cantidad']

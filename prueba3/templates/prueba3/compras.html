@@ -98,25 +98,35 @@
     <!--fin menu-->
 
     <!-- Aquí va el contenido -->
+
     <div class="container">
-      <div class="row">
-          <!-- Elementos generados a partir del JSON -->
-          <main id="items" class="col-sm-8 row"></main>
-          <!-- Carrito -->
-          <aside class="col-sm-4">
-              <h2>Carrito</h2>
-              <!-- Elementos del carrito -->
-              <ul id="carrito" class="list-group"></ul>
-              <hr>
-              <!-- Precio total -->
-              <p class="text-right">Total: <span id="total"></span>$</p>
-              <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
-          </aside>
-      </div>
-  </div>
-  
-  
-<script src="compras.js"></script>
+    <h1>Venta</h1>
+    <div class="row">
+        <form method="post" action="" id="Formulario Venta">
+            {% csrf_token %}
+            <div class="form-group">
+
+              {{form.as_table}}
+
+            </div>
+
+            <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
+            <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
+            <div id="error" class="alert alert-danger" role="alert"></div>
+
+        </form>
+        <div class="alert alert-success" role="alert">
+          {{mensaje}}
+        </div>
+
+    </div>
+    </div>
+
+
+
+
+
+
 
     <!-- Aquí termina el contenido -->
 
@@ -160,7 +170,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" 
     integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" 
     crossorigin="anonymous"></script>
-    <script src="{% static 'prueba3/js/compras.js' %}"></script>
     
 
     
