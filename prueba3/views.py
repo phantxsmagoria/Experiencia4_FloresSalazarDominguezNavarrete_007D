@@ -9,20 +9,16 @@ def vision(request):
     return render(request, 'prueba3/vision.html')
 
 def compras(request):
-    datos = {'form': VentaForm()}
-    if request.method== 'POST': 
-        formulario = VentaForm(request.POST)
-        if formulario.is_valid:
-            formulario.save()
-            datos['mensaje'] = "Compra realizada Correctamente"
-
-    return render(request, 'prueba3/compras.html',datos)
+    return render(request, 'prueba3/compras.html')
 
 def mision(request):
     return render(request, 'prueba3/mision.html')
 
 def quienessomos(request):
     return render(request, 'prueba3/quienessomos.html')
+
+def seguimiento(request):
+    return render(request, 'prueba3/seguimiento.html')
 
 def formulario(request):
     datos = {'form':ContactoForm()}
