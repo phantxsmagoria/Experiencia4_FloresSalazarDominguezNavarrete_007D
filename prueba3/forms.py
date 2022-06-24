@@ -19,4 +19,4 @@ class VentaForm(ModelForm):
 
     class Meta:
         model = Venta
-        fields = ['usuario','producto','cantidad']
+        fields = ['id_venta','usuario','producto','cantidad']

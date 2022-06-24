@@ -10,6 +10,11 @@ def vision(request):
 
 def compras(request):
     datos = {'form': VentaForm()}
+    if request.method== 'POST': 
+        formulario = VentaForm(request.POST)
+        if formulario.is_valid:
+            formulario.save()
+            datos['mensaje'] = "Compra realizada Correctamente"
 
     return render(request, 'prueba3/compras.html',datos)
 

@@ -41,7 +41,7 @@ class Venta(models.Model):
     producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     cantidad = models.IntegerField(null=True,verbose_name='Cantidad de producto')
-    total_venta = models.IntegerField(verbose_name='Monto total de venta')
+    total_venta = models.IntegerField(null=True,verbose_name='Monto total de venta')
     descuento = models.CharField(max_length=25, verbose_name='Porcentaje de descuento')
 
     def __str__(self):
