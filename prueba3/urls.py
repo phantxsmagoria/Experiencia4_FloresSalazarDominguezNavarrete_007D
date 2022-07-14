@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index, vision,seguimiento, mision, quienessomos, formulario, adoptados, galeria, registrousuario, compras, mod_registrousuario, mostrardatos, del_registrousuario
+from .views import index, vision,seguimiento, compras2, mision, quienessomos, formulario, adoptados, galeria, registrousuario, compras, mod_registrousuario, mostrardatos, del_registrousuario
 
 urlpatterns = [
     path('',index,name="index"),
@@ -11,8 +11,10 @@ urlpatterns = [
     path('adoptados.html',adoptados,name="adoptados"),
     path('galeria.html',galeria,name="galeria"),
     path('compras.html',compras,name="compras"),
+    path('compras2.html',compras2,name="compras2"),
     path('registrousuario.html',registrousuario,name="registrousuario"),
     path('mod_registrousuario.html/compras.html',compras,name="compras"),
+    path('mod_registrousuario.html/compras2.html',compras2,name="compras2"),
     path('mod_registrousuario.html/index.html',index,name="index"),
     path('mod_registrousuario.html/vision.html',vision,name="vision"),
     path('mod_registrousuario.html/mision.html',mision,name="mision"),

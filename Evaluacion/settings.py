@@ -80,7 +80,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
         'NAME':'127.0.0.1:1521/xe',
-        'USER' : 'c##prueba3',
+        'USER' : 'c##examen',
         'PASSWORD':'1234',
         'TEST' : {
             'USER' : 'default_test',

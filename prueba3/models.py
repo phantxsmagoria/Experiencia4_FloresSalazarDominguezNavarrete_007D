@@ -12,6 +12,7 @@ class Usuario(models.Model):
     Direccion = models.CharField(max_length=50,verbose_name='Dirección')
     region = models.CharField(max_length=50,verbose_name='Región')
     comuna = models.CharField(max_length=50,verbose_name='Comuna')
+    suscripcion = models.CharField(max_length=2,verbose_name="suscripcion")
 
     def __str__(self):
         return self.rut

@@ -11,6 +11,9 @@ def vision(request):
 def compras(request):
     return render(request, 'prueba3/compras.html')
 
+def compras2(request):  
+    return render(request, 'prueba3/compras2.html')
+
 def mision(request):
     return render(request, 'prueba3/mision.html')
 

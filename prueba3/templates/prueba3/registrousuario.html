@@ -142,6 +142,16 @@
               </div>
 
               <div class="col-md-4">
+                <label for="exampleInputPassword1" class="form-label">¿Deseas suscribirse?</label>
+                <select class="form-select" aria-label="Default select example" name="{{form.suscripcion.name}}">
+                  <option selected>-----</option>
+                  <option value="si">Si, Deseo suscribirme</option>
+                  <option value="no">No, No deseo suscribirme</option>
+                  
+                </select>
+              </div>
+
+              <div class="col-md-4">
                 <label for="phoneNumber" class="form-label">Teléfono</label>
                 <input type="text" class="form-control" id="phoneNumber" placeholder="+(569) 54542878" pattern="\x2b[0-9]+" required name="{{form.telefono.name}}">
               </div>

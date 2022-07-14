@@ -2,33 +2,45 @@
 const baseDeDatos = [
     {
         id: 1,
-        nombre: 'Patata',
-        precio: 600,
-        imagen: 'patata.jpg'
+        nombre: 'Purina Dog Chow - Saco 15 kg',
+        precio: 39990,
+
     },
     {
         id: 2,
-        nombre: 'Cebolla',
-        precio: 500,
-        imagen: 'cebolla.jpg'
+        nombre: 'Lata de atún Félix',
+        precio: 1200,
+
     },
     {
         id: 3,
-        nombre: 'Calabacin',
-        precio: 1200,
-        imagen: 'calabacin.jpg'
+        nombre: 'Cama iglú gato 60*30 cm',
+        precio: 14990,
+
     },
     {
         id: 4,
-        nombre: 'Fresas',
-        precio: 900,
-        imagen: 'fresas.jpg'
+        nombre: 'Frontline - Spray',
+        precio: 17990,
+
+    },
+    {
+        id: 5,
+        nombre: 'Collar para gato (30 cm)',
+        precio: 3990,
+
+    },
+    {
+        id: 6,
+        nombre: 'Ropa para perro - Parka (talla L)',
+        precio: 7990,
+
     }
 
 ];
 
 let carrito = [];
-const divisa = '$';
+const divisa = '';
 const DOMitems = document.querySelector('#items');
 const DOMcarrito = document.querySelector('#carrito');
 const DOMtotal = document.querySelector('#total');
@@ -52,9 +64,7 @@ function renderizarProductos() {
         miNodoTitle.classList.add('card-title');
         miNodoTitle.textContent = info.nombre;
         // Imagen
-        const miNodoImagen = document.createElement('img');
-        miNodoImagen.classList.add('img-fluid');
-        miNodoImagen.setAttribute('src', info.imagen);
+
         // Precio
         const miNodoPrecio = document.createElement('p');
         miNodoPrecio.classList.add('card-text');
@@ -66,7 +76,7 @@ function renderizarProductos() {
         miNodoBoton.setAttribute('marcador', info.id);
         miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
         // Insertamos
-        miNodoCardBody.appendChild(miNodoImagen);
+
         miNodoCardBody.appendChild(miNodoTitle);
         miNodoCardBody.appendChild(miNodoPrecio);
         miNodoCardBody.appendChild(miNodoBoton);
@@ -150,7 +160,7 @@ function calcularTotal() {
             return itemBaseDatos.id === parseInt(item);
         });
         // Los sumamos al total
-        return total + miItem[0].precio;
+        return (total + miItem[0].precio*0.9);
     }, 0).toFixed(2);
 }
 

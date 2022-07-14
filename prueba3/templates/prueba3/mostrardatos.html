@@ -117,6 +117,7 @@
                   <th scope="col">DIRECCIÓN</th>
                   <th scope="col">REGIÓN</th>
                   <th scope="col">COMUNA</th>
+                  <th scope="col">SUSCRITO</th>
                   <th scope="col">OPCIONES</th>
                 </tr>
               </thead>
@@ -133,8 +134,15 @@
                   <td>{{us.Direccion}}</td>
                   <td>{{us.region}}</td>
                   <td>{{us.comuna}}</td>
+                  <td>{{us.suscripcion}}</td>
                   <td><a type="submit" class="btn btn-primary" href="{% url 'mod_registrousuario' us.rut %}">Modificar</a></td>
-                  <td><a type="submit" class="btn btn-primary" href="{% url 'del_registrousuario' us.rut %}">Eliminar</a></td>
+                  <td>{% if us.suscripcion == "si" %}
+                  <a type="submit" class="btn btn-primary" href="{% url 'compras2'  %}">Ir a comprar</a>
+                  {% else %}
+                  <a type="submit" class="btn btn-primary" href="{% url 'compras'  %}">Ir a comprar</a>
+                  {% endif %}</td>
+
+                  
                </tr>
               </tbody>
               {% endfor %}

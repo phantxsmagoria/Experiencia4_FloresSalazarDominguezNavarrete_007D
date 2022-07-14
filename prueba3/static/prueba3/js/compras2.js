@@ -160,7 +160,7 @@ function calcularTotal() {
             return itemBaseDatos.id === parseInt(item);
         });
         // Los sumamos al total
-        return (total + miItem[0].precio*0.9);
+        return (total + miItem[0].precio*0.95);
     }, 0).toFixed(2);
 }
 
